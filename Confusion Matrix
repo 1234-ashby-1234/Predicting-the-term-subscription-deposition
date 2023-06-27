@@ -1,0 +1,30 @@
+pred_forest <- predict(object = b_forest, newdata = bank_test2, type = "raw")
+confusionMatrix(data = pred_forest, reference = bank_test2$y, positive = "yes")
+#> Confusion Matrix and Statistics
+#> 
+#>           Reference
+#> Prediction   no  yes
+#>        no  6978  415
+#>        yes  306  539
+#>                                           
+#>                Accuracy : 0.9125          
+#>                  95% CI : (0.9062, 0.9185)
+#>     No Information Rate : 0.8842          
+#>     P-Value [Acc > NIR] : < 2.2e-16       
+#>                                           
+#>                   Kappa : 0.5503          
+#>                                           
+#>  Mcnemar's Test P-Value : 5.767e-05       
+#>                                           
+#>             Sensitivity : 0.56499         
+#>             Specificity : 0.95799         
+#>          Pos Pred Value : 0.63787         
+#>          Neg Pred Value : 0.94387         
+#>              Prevalence : 0.11580         
+#>          Detection Rate : 0.06543         
+#>    Detection Prevalence : 0.10257         
+#>       Balanced Accuracy : 0.76149         
+#>                                           
+#>        'Positive' Class : yes             
+#> 
+The model has a fairly high accuracy of 91.25%, but the sensitivity/recall value is very small at 56.49%
